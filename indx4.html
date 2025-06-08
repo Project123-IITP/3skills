@@ -1,0 +1,1051 @@
+<!-- Full working HTML for 3Skill website -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3Skill - Learn & Grow</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- SwiperJS CDN -->
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  });
+</script>
+
+
+  <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    padding-top: 80px;
+}
+
+/* Header/Navbar */
+header {
+    background: #3560c4;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar nav ul li a {
+    color: #f1f5f9;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+section.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.75;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    max-width: 450px;
+    width: 100%;
+    background: #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar input {
+    border: none;
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background: #38bdf8;
+    border: none;
+    padding: 0 1.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.get-start-btn {
+  display: inline-block;
+  background-color: #06066d;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.get-start-btn:hover {
+  background-color: #274a8a;
+}
+
+
+/* Partners Section */
+section.partners {
+    background: #e0f2fe;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.partners-logos img {
+    max-height: 60px;
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.partners-logos img:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* Services Section */
+section.services {
+    background: #f8fafc;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.service-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(124, 58, 237, 0.1);
+    padding: 2rem;
+    max-width: 300px;
+    flex: 1 1 280px;
+}
+
+.service-item i {
+    font-size: 2rem;
+    color: #7c3aed;
+    margin-bottom: 1rem;
+}
+
+.service-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.service-item p {
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+/* Courses Section */
+section.courses {
+    background: #ffffff;
+    padding: 4rem 1rem;
+}
+
+.courses h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.courses p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #475569;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.course-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+}
+
+.course-content p {
+    flex: 1;
+    color: #475569;
+    margin-bottom: 1rem;
+}
+
+.course-content .price {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #16a34a;
+    margin-bottom: 1rem;
+}
+
+.course-content .enroll-btn {
+    background: #38bdf8;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Placement Slider */
+.placement-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.slider {
+    overflow: hidden;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.slide-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.slide img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+.student-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.company-name {
+    font-size: 15px;
+    color: #3A1078;
+}
+
+.prev, .next {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: #555;
+}
+
+/* Categories Section */
+  section.categories {
+    padding: 4rem 1rem 6rem;
+    background: white;
+    text-align: center;
+  }
+  section.categories h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #183a51;
+  }
+  section.categories p {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .category-item {
+    background: #c8e0ec;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    flex: 1 1 220px;
+    max-width: 260px;
+    box-shadow: 0 8px 18px rgba(32,130,69,0.15);
+    transition: transform 0.3s ease;
+  }
+  .category-item:hover {
+    transform: translateY(-8px);
+  }
+  .category-icon {
+    font-size: 40px;
+    color: #3c88e0;
+    margin-bottom: 1rem;
+  }
+  .category-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #3041da;
+  }
+  .category-desc {
+    font-size: 1rem;
+    color: #3b86d2;
+  }
+
+  #catrigari {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+#catrigari {
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* Vertical centering */
+  padding-top: 60px;    /* Upar se margin */
+  padding-bottom: 40px;
+  min-height: 250px;    /* Height badhaya, vertical center ke liye */
+}
+
+#catrigari {
+  padding-top: 60px; /* upar se gap */
+  text-align: center; /* andar content center karne ke liye */
+}
+
+.round-box {
+  margin-top: 80px;  /* box ke upar se gap */
+  display: inline-block;
+  border: 2px solid #3560c4;
+  padding: 30px;
+  border-radius: 50px 50px 50px 50px;;
+  background-color: #f0f4ff;
+  box-shadow: 0 6px 12px rgba(53, 96, 196, 0.25);
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+.take-exam-btn {
+  display: inline-block;
+  background-color: #3560c4;
+  color: white;
+  padding: 16px 40px; /* button ke andar padding */
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;       /* button ko horizontally center karta hai */
+  display: block;       /* margin auto kaam kare iske liye block hona chahiye */
+  max-width: 200px;     /* optional: button ko wide na hone dena */
+}
+
+.take-exam-btn:hover {
+  background-color: #274a8a;
+}
+
+
+
+
+
+
+
+
+/* Testimonials Section */
+
+  .testimonials-section {
+  background-color: #f0f9ff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #0f172a;
+}
+
+.swiper {
+  width: 90%;
+  max-width: 1200px;
+  padding-bottom: 3rem;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.swiper-slide.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid #38bdf8;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  color: #0f172a;
+}
+
+/* Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0ea5e9;
+  z-index: 10;
+  display: block;
+}
+
+
+/*Contact Section */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .footer {
+      background-color: #152c80;
+      color: white;
+      padding: 80px 40px 30px 40px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .footer-logo,
+    .footer-contact,
+    .footer-links,
+    .footer-newsletter {
+      flex: 1 1 250px;
+    }
+
+    .footer-logo img {
+      width: 120px;
+      margin-bottom: 25px;
+    }
+
+    .footer-logo p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .footer h3 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .footer-contact p,
+    .footer-links ul li {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+   .contact-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-heading {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 700;
+}
+
+.contact-description {
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.contact-form {
+  text-align: left;
+}
+/* Newsletter Centering */
+.footer-newsletter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.form-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 12px 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #3560c4;
+}
+
+.contact-submit-btn {
+  background-color: #3560c4;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-submit-btn:hover {
+  background-color: #274a8a;
+}
+
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      font-size: 18px;
+    }
+
+    .footer-bottom span {
+      color: #facc15;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <a href="#" class="logo">3Skill</a>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#partners">Partners</a></li>
+          
+          <li><a href="#services">Services</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#categories">Categories</a></li>
+           <li><a href="#Testimonial">Testimonial</a></li>
+           
+        </ul>
+      </nav>
+     <a href="https://example.com" class="get-start-btn">Get Start</a>
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="2759484-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+    </video>
+    <h1>Grow Smarter with 3Skill</h1>
+    <p>Join thousands of learners and master future-ready skills with 3Skill. Learn from top experts at your own pace, anytime, anywhere.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search Your Course" />
+      <button><i class="fa fa-search"></i></button>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section id="partners" class="partners">
+    <h2>Our Trusted Partners Around the World</h2>
+    <div class="partners-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Microsoft_logo.svg" alt="Microsoft" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Oracle_logo.svg" alt="Oracle" />
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-item">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Expert Mentors</h3>
+        <p>Learn from industry leaders and certified instructors.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Hands-on Projects</h3>
+        <p>Build real-world projects to boost your portfolio.</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 Support</h3>
+        <p>Get technical and career help whenever you need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section id="courses" class="courses">
+    <h2>Choose Your Favourite Internship</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem 45.</p>
+    <div class="course-grid">
+      <div class="course-card">
+        <img src="https://source.unsplash.com/400x300/?programming" alt="Course 1" />
+        <div class="course-content">
+          <h3>Web Development Bootcamp</h3>
+          <p>Master HTML, CSS, JavaScript and modern frameworks to build responsive websites.</p>
+          <div class="price">$499</div>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://source.unsplash.com/400x300/?data" alt="Course 2" />
+        <div class="course-content">
+          <h3>Data Science & Machine Learning</h3>
+          <p>Learn data analysis, visualization, machine learning, and Python coding from scratch.</p>
+          <div class="price">$499</div>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://source.unsplash.com/400x300/?design" alt="Course 3" />
+        <div class="course-content">
+          <h3>UI/UX Design Fundamentals</h3>
+          <p>Design intuitive and user-friendly interfaces with real-world project guidance.</p>
+          <div class="price">$499</div>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placement Section -->
+    <div class="placement-section">
+      <h2>Our Placed Students</h2>
+      <div class="slider-container">
+        <button class="prev" onclick="moveSlide(-1)">❮</button>
+        <div class="slider">
+          <div class="slide-track" id="slideTrack">
+            <div class="slide"><img src="" alt="Student 1"><p class="student-name">xyz</p><p class="company-name">xyz</p></div>
+            <div class="slide"><img src="" alt="Student 2"><p class="student-name">xyz</p><p class="company-name">xtz</p></div>
+            <div class="slide"><img src="" alt="Student 3"><p class="student-name">xyz</p><p class="company-name">xyez</p></div>
+            <div class="slide"><img src="" alt="Student 4"><p class="student-name">xyz</p><p class="company-name">xyzew</p></div>
+            <div class="slide"><img src="" alt="Student 5"><p class="student-name">xyz</p><p class="company-name">xyze</p></div>
+            <div class="slide"><img src="" alt="Student 6"><p class="student-name">Abinash Jena</p><p class="company-name">xyz</p></div>
+          </div>
+        </div>
+        <button class="next" onclick="moveSlide(1)">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="categories">
+  <h2> Categories</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus placeat atque deserunt numquam dolores cum, quasi hic, praesentium est aperiam, tempore ullam ipsa pariatur doloremque..</p>
+  <div class="category-list">
+    <div class="category-item">
+      <div class="category-icon"><i class="fas fa-robot"></i></div>
+      <div class="category-title">Artificial Intelligence</div>
+      <div class="category-desc">Dive into AI fundamentals, machine learning, and deep learning with hands-on projects.</div>
+    </div>
+    <div class="category-item">
+      <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
+      <div class="category-title">Web Development</div>
+      <div class="category-desc">Learn to build responsive websites and web apps using modern technologies.</div>
+    </div>
+    <div class="category-item">
+      <div class="category-icon"><i class="fas fa-chart-line"></i></div>
+      <div class="category-title">Data Science</div>
+      <div class="category-desc">Master data analysis, visualization tools, and real-world data projects.</div>
+    </div>
+    <div class="category-item">
+      <div class="category-icon"><i class="fas fa-shield-alt"></i></div>
+      <div class="category-title">Cybersecurity</div>
+      <div class="category-desc">Protect digital systems with ethical hacking, risk analysis, and cyber essentials.</div>
+    </div>
+  </div>
+   <div class="round-box">
+    <h2>Round 1: Entrance Exam — 3skill Tech Program</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <a href="https://example.com/take-exam" target="_blank" class="take-exam-btn">Take Exam</a>
+  </div>
+
+  </div>
+</section>
+
+<section id="Testimonial" class="testimonials-section">
+  <h2>What Our Learners Say</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Testimonial 1 -->
+      <div class="swiper-slide testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User 1">
+        <p class="testimonial-text">"3Skill helped me crack my dream job! The hands-on courses and mentorship were amazing."</p>
+        <p class="testimonial-name">— Priya Sharma</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="swiper-slide testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="User 2">
+        <p class="testimonial-text">"The course content was top-notch and easy to follow. Highly recommend to all learners."</p>
+        <p class="testimonial-name">— Rohan Verma</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="swiper-slide testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User 3">
+        <p class="testimonial-text">"Loved the practical approach! Got placed right after completing the Full Stack Bootcamp."</p>
+        <p class="testimonial-name">— Sneha Gupta</p>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="swiper-slide testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="User 4">
+        <p class="testimonial-text">"The mock interviews and projects helped me become confident. Great platform!"</p>
+        <p class="testimonial-name">— Arjun Mehta</p>
+      </div>
+
+      <!-- Testimonial 5 -->
+      <div class="swiper-slide testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User 5">
+        <p class="testimonial-text">"Superb mentorship! My resume got shortlisted because of their guidance."</p>
+        <p class="testimonial-name">— Anjali Sen</p>
+      </div>
+
+      <!-- Testimonial 6 -->
+      <div class="swiper-slide testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User 6">
+        <p class="testimonial-text">"All the instructors were experienced and helped me during live sessions."</p>
+        <p class="testimonial-name">— Karan Jaiswal</p>
+      </div>
+
+      <!-- Testimonial 7 -->
+      <div class="swiper-slide testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/15.jpg" alt="User 7">
+        <p class="testimonial-text">"Best learning platform for freshers and final-year students."</p>
+        <p class="testimonial-name">— Ritu Kumari</p>
+      </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<section 
+ class="footer">
+    <div class="footer-container">
+      <!-- Logo and About -->
+      <div class="footer-logo">
+        <img src="https://via.placeholder.com/120x60?text=3+SKILL" alt="3Skill Logo">
+        <p>
+          Join thousands of learners and master future-ready skills with 3Skill.
+          From AI and Web Development to Data Science and emerging tech —
+          learn from top experts at your own pace, anytime, anywhere.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p><strong>Address</strong><br>Bbsr, Odisha</p>
+        <p><strong>Phone</strong><br>+91 6372105534</p>
+        <p><strong>Website</strong><br>3skill.shop & 3skill.in</p>
+        <p><strong>Email</strong><br>3skill.contact@gmail.com</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>Home</li>
+          <li>Services</li>
+          <li>Courses</li>
+          <li>Categories</li>
+          <li>Testimonials</li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+<div class="container">
+  <h2 class="contact-heading">Contact Us</h2>
+  <p class="contact-description">Have questions or want to get in touch? We'd love to hear from you!</p>
+
+  <form class="contact-form">
+    <div class="form-row">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+    </div>
+
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email" required>
+    </div>
+
+    <div class="form-row">
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+
+    <button type="submit" class="contact-submit-btn">Send Message</button>
+  </form>
+
+  <!-- Moved Footer Bottom inside the container and centered -->
+  <div class="footer-bottom" style="margin-top: 40px; text-align: center;">
+    Created By <span>@3SKILL,2025</span> All Rights Reserved
+  </div>
+</div>
+
+
+</section>
+
+
+
+  <script>
+    let currentSlide = 0;
+    function moveSlide(direction) {
+      const slideTrack = document.querySelector('.slide-track');
+      const slides = document.querySelectorAll('.slide');
+      currentSlide = (currentSlide + direction + slides.length) % slides.length;
+      slideTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
+</body>
+
+</html>
